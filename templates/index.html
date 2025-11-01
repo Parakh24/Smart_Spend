@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Purchase Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        text-align: center;
+        margin-top: 50px;
+      }
+      form {
+        display: inline-block;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background: white;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Customer Purchase Prediction</h2>
+
+    <form action="/predict" method="POST">
+      <label>V1:</label>
+      <input type="number" step="any" name="V1" required><br><br>
+
+      <label>V2:</label>
+      <input type="number" step="any" name="V2" required><br><br>
+
+      <label>V3:</label>
+      <input type="number" step="any" name="V3" required><br><br>
+
+      <label>V4:</label>
+      <input type="number" step="any" name="V4" required><br><br>
+
+      <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+      <h3>Predicted Class: {{ result }}</h3>
+    {% endif %}
+  </body>
+</html>
+
+
